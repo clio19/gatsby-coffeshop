@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 
 import { FaGem } from "react-icons/fa"
 import BackgroundSection from "../components/Globals/BackgroundSection"
+import Info from "../components/Home/Info"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -17,8 +18,11 @@ const IndexPage = ({ data }) => (
     />
     {/* <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <FaGem /> */}
+    <p>Now go build s
+    omething great.</p>
+    <FaGem />
+     */}
+    <Info />
   </Layout>
 )
 
