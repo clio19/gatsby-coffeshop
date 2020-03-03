@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import { FaGem } from "react-icons/fa"
 import BackgroundSection from "../components/Globals/BackgroundSection"
 import Info from "../components/Home/Info"
+import Menu from "../components/Home/Menu"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -23,15 +24,34 @@ const IndexPage = ({ data }) => (
     <FaGem />
      */}
     <Info />
+    <Menu items={data.menu} />
   </Layout>
 )
 
 export const query = graphql`
-  query {
+  {
     img: file(relativePath: { eq: "default-background.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    menu: allContentfulCoffeeItem {
+      edges {
+        node {
+          id
+          title
+          description {
+            description
+          }
+          price
+          category
+          image {
+            fixed(width: 50, height: 50) {
+              ...GatsbyContentfulFixed_tracedSVG
+            }
+          }
         }
       }
     }
