@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import { FaGem } from "react-icons/fa"
-import BackgroundSection from "../components/Globals/BackgroundSection"
+// import BackgroundSection from "../components/Globals/BackgroundSection"
 import Info from "../components/Home/Info"
 import Menu from "../components/Home/Menu"
 import Products from "../components/Home/Products"
@@ -14,11 +14,11 @@ import Contact from "../components/Home/Contact"
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <BackgroundSection
+    {/* <BackgroundSection
       img={data.img.childImageSharp.fluid}
       title="Htrix caffe"
       styleClass="default-background"
-    />
+    /> */}
     {/* <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build s
@@ -34,13 +34,6 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
   {
-    img: file(relativePath: { eq: "default-background.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
     menu: allContentfulCoffeeItem {
       edges {
         node {
